@@ -1,7 +1,8 @@
 package controller;
 
 import Coordinate.Point;
-import figure.Line;
+import figure.Figure;
+import figure.FigureFactroy;
 import viewer.CoordinateViewer;
 import viewer.Viewer;
 
@@ -16,12 +17,12 @@ public class CoordinateCalculator {
     public void start() {
 
         Point[] points = viewer.getCoordinateInput();
-        Line line = new Line(points[0], points[1]);
+        Figure figure = FigureFactroy.create(points);
 
         CoordinateViewer coordinateViewer = new CoordinateViewer();
-        coordinateViewer.printPlane(line);
+        coordinateViewer.printPlane(figure);
 
-        viewer.printDistance(line.getDistance());
+        viewer.printArea(figure);
 
 
     }

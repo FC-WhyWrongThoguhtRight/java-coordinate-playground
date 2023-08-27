@@ -2,6 +2,7 @@ package viewer;
 
 import controller.InputSpliter;
 import Coordinate.Point;
+import figure.Figure;
 
 import java.util.Scanner;
 
@@ -21,9 +22,8 @@ public class Viewer {
         return InputSpliter.getPoints(s);
     }
 
-    public void printDistance(double d){
-        System.out.print("두 점 사이 거리는 ");
-        System.out.println(d);
+    public void printArea(Figure f){
+        System.out.print(f.toString());
     }
 
 

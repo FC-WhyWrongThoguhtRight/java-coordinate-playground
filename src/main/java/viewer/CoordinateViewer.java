@@ -1,7 +1,7 @@
 package viewer;
 
 import Coordinate.Point;
-import figure.Line;
+import figure.Figure;
 
 import java.util.Arrays;
 
@@ -18,13 +18,12 @@ public class CoordinateViewer {
         }
     }
 
-    public void printPlane(Line line){
+    public void printPlane(Figure figure){
 
-        Point p1 = line.getPoint1();
-        Point p2 = line.getPoint2();
 
-        dottingPlane(p1);
-        dottingPlane(p2);
+        for(Point p : figure.getPoints()){
+            dottingPlane(p);
+        }
 
         draw();
 
