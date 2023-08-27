@@ -32,4 +32,5 @@ public class Rectangle extends AbstractFigure{
     public String toString() {
         return "사각형의 넓이는 " + area();
     }
+
 }

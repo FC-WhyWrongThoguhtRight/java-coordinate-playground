@@ -31,4 +31,5 @@ public class Line extends AbstractFigure{
     public String toString() {
         return "두 점 사이의 거리는 " + area();
     }
+
 }
