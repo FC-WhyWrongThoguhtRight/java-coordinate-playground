@@ -46,6 +46,13 @@ public class Point {
         return new Point(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
     }
 
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

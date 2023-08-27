@@ -2,7 +2,7 @@ package figure;
 
 import java.util.List;
 
-public class Line extends AbstractFigure {
+public class Line extends AbstractFigure{
 
     public static final int LINE_SIZE = 2;
 
@@ -22,6 +22,13 @@ public class Line extends AbstractFigure {
 
     @Override
     public double area() {
-        return 0;
+        Point p1 = getPoint(0);
+        Point p2 = getPoint(1);
+        return p1.getDistance(p2);
+    }
+
+    @Override
+    public String toString() {
+        return "두 점 사이의 거리는 " + area();
     }
 }

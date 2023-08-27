@@ -23,4 +23,7 @@ public abstract class AbstractFigure implements Figure{
     public List<Point> getPoints() {
         return points;
     }
+
+
+
 }

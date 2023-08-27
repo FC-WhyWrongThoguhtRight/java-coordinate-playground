@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Rectangle extends AbstractFigure{
 
-    public static final int RECTAGLE_SIZE = 2;
+    public static final int RECTANGLE_SIZE = 4;
 
     public Rectangle(List<Point> points) {
         super(points);
@@ -12,7 +12,7 @@ public class Rectangle extends AbstractFigure{
 
     @Override
     public int size() {
-        return RECTAGLE_SIZE;
+        return RECTANGLE_SIZE;
     }
 
     @Override
@@ -22,6 +22,14 @@ public class Rectangle extends AbstractFigure{
 
     @Override
     public double area() {
-        return 0;
+        Point p1 = getPoint(0);
+        Point p2 = getPoint(0);
+        Point p3 = getPoint(0);
+        return p1.getDistance(p2) * p1.getDistance(p3);
+    }
+
+    @Override
+    public String toString() {
+        return "사각형의 넓이는 " + area();
     }
 }
