@@ -4,11 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
-public class Square implements Figure{
-    private List<Point> points;
-
+public class Square extends AbstractFigure{
     public Square(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
     @Override
@@ -31,11 +29,11 @@ public class Square implements Figure{
     }
 
     private Point getMinPoint(Function<Point, Integer> function) {
-        return points.stream().min(Comparator.comparing(function)).get();
+        return getPoints().stream().min(Comparator.comparing(function)).get();
     }
 
     private Point getMaxPoint(Function<Point, Integer> function) {
-        return points.stream().max(Comparator.comparing(function)).get();
+        return getPoints().stream().max(Comparator.comparing(function)).get();
     }
 
 

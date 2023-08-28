@@ -3,15 +3,13 @@ package mission2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Line implements Figure{
-    private List<Point> points;
-
+public class Line extends AbstractFigure{
     public Line(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
     @Override
     public double getResult() {
-        return Math.sqrt(points.get(0).getDistance(points.get(1)));
+        return Math.sqrt(getPoints().get(0).getDistance(getPoints().get(1)));
     }
 }

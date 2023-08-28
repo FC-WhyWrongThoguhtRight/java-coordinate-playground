@@ -3,18 +3,17 @@ package mission2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Triangle implements Figure{
-    private List<Point> points;
+public class Triangle extends AbstractFigure{
 
     public Triangle(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
     @Override
     public double getResult() {
-        double x = points.get(0).getDistance(points.get(1));
-        double y = points.get(0).getDistance(points.get(2));
-        double z = points.get(1).getDistance(points.get(2));
+        double x = getPoints().get(0).getDistance(getPoints().get(1));
+        double y = getPoints().get(0).getDistance(getPoints().get(2));
+        double z = getPoints().get(1).getDistance(getPoints().get(2));
 
         double s = (x+y+z)/2.0;
         return Math.sqrt(s*(s-x)*(s-y)*(s-z));
