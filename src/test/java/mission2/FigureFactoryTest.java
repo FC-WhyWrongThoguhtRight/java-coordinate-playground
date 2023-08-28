@@ -41,4 +41,6 @@ public class FigureFactoryTest {
 
         assertThat(FigureFactory.getInstance(pointList)).isInstanceOf(Square.class);
     }
+
+
 }

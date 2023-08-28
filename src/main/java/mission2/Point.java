@@ -1,6 +1,7 @@
 package mission2;
 
 public class Point {
+    public static final int SQUARE_ROOT = 2;
     private final int x;
     private final int y;
 
@@ -12,7 +13,7 @@ public class Point {
     public double getDistance(Point other) {
         int xDifference = other.minusX(x);
         int yDifference = other.minusY(y);
-        return Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2));
+        return Math.sqrt(Math.pow(xDifference, SQUARE_ROOT) + Math.pow(yDifference, SQUARE_ROOT));
     }
 
     private int minusX(int number) {
