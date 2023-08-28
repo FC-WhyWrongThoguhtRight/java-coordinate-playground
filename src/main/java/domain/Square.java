@@ -3,15 +3,14 @@ package domain;
 import exception.CustomException;
 import exception.ErrorCode;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Square extends Figure {
-    public Square(Point p1, Point p2, Point p3, Point p4) {
-        super(Arrays.asList(p1, p2, p3, p4));
-        if (!isValid()) {
-            throw new CustomException(ErrorCode.NOT_VALID_REQUEST);
-        }
-        Collections.sort(points);
+    protected Square() {
+        super(null);
     }
 
     public Square(List<Point> points) {
@@ -22,7 +21,7 @@ public class Square extends Figure {
         Collections.sort(points);
     }
 
-    public static Square create(List<Point> points) {
+    public Square create(List<Point> points) {
         return new Square(points);
     }
 
@@ -38,9 +37,14 @@ public class Square extends Figure {
     }
 
     @Override
-    public Double getArea() {
+    public Double getLengthOrArea() {
         Line height = new Line(points.get(0), points.get(1));
         Line width = new Line(points.get(0), points.get(2));
-        return height.getBetween() * width.getBetween();
+        return height.getLengthOrArea() * width.getLengthOrArea();
+    }
+
+    @Override
+    public String toString() {
+        return "사각형 넓이는 " + Math.round(getLengthOrArea());
     }
 }

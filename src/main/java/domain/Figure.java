@@ -9,5 +9,7 @@ public abstract class Figure {
         this.points = points;
     }
 
-    abstract Double getArea();
+    abstract Figure create(List<Point> points);
+
+    abstract Double getLengthOrArea();
 }
