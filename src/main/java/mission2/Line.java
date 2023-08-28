@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Line implements Figure{
-    public static final int LINE_POINT_SIZE = 2;
-
     private List<Point> points;
 
     public Line(List<Point> points) {
