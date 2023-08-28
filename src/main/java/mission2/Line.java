@@ -10,6 +10,6 @@ public class Line extends AbstractFigure{
 
     @Override
     public double getResult() {
-        return Math.sqrt(getPoints().get(0).getDistance(getPoints().get(1)));
+        return getPoints().get(0).getDistance(getPoints().get(1));
     }
 }
